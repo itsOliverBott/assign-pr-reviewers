@@ -1,2 +1,3 @@
-# assign-pr-reviewers
-GitHub Action to assign PR reviewers
+# 🔥 Assign Assign Reviewers to PR
+
+GitHub Action to assign PR reviewers based on list provided

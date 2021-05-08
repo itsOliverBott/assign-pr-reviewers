@@ -1,0 +1,20 @@
+name: 'Assign Reviewers to PR'
+description: 'GitHub Action to assign PR reviewers'
+author: 'itsOliverBott'
+inputs:
+  token:
+    description: 'GitHub token for repository access'
+    required: true
+  users:
+    description: 'Comma-separated users to be added as reviewers (example: "itsOliverBott, SantaClaus, b4tman, sp0derman")'
+    required: true
+  ignore-drafts:
+    description: 'Ignore action if PR is a draft'
+    required: false
+  
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'users'
+  color: 'green'

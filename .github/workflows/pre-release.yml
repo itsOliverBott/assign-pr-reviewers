@@ -1,0 +1,34 @@
+name: "pre-release"
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  pre-release:
+    name: "Pre Release"
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out repository
+
+      - uses: actions/setup-node@v1
+        name: Set up Node.js, build & package
+        with:
+          node-version: 12
+      - run: |
+          npm install
+          npm run build
+          npm run package
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        name: Deploy a pre-production release on latest tag
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            dist/licenses.txt
+            dist/index.js

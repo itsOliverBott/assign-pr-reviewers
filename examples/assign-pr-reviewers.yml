@@ -1,0 +1,18 @@
+name: "Assign Reviewers to PR"
+
+on:  
+  pull_request:
+    types: [opened, ready_for_review, reopened, review_requested, review_request_removed]
+     
+jobs:
+  assign-pr-reviewers:
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Assign Reviewers to PR"
+      uses: itsOliverBott/assign-pr-reviewers@release
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        users: "itsOliverBott" # comma-separated (example: "itsOliverBott, SantaClaus, b4tman, sp0derman")
+        max-reviewers: -1 # defaults to -1 if not provided (-1 = unlimited reviewer count)
+        ignore-drafts: true # defaults to false if not provided
+

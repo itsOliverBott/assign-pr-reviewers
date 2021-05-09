@@ -13,6 +13,5 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         users: "itsOliverBott" # comma-separated (example: "itsOliverBott, SantaClaus, b4tman, sp0derman")
-        max-reviewers: -1 # defaults to -1 if not provided (-1 = unlimited reviewer count)
         ignore-drafts: true # defaults to false if not provided
 

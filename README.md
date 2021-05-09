@@ -6,7 +6,7 @@ GitHub Action to assign PR reviewers based on list of comma-separated usernames
 
 #### 📋 GitHub Action Inputs
 
-**users** - comma-separated list of GitHub usernames to add as reviewers
+**users** - comma-separated list of GitHub usernames
 
 ```
 users: "itsOliverBott, SantaClaus, b4tman, sp0derman"
